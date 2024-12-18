@@ -37,6 +37,5 @@ clean-targets:         # directories to be removed by `dbt clean`
 
 models:
   solana-dbt-model:
-    # Applies to all files under models/example/
-    example:
+    trillium-datas:
       +materialized: table

@@ -1,0 +1,12 @@
+version: 2
+sources:
+  - name: raw_epochs_votes
+    description: "Données brutes d'epochs avec votes encodés"
+    tables:
+      - name: epochs_votes
+        description: "Votes encodés en Base64 pour chaque epoch"
+  - name: decoded_epochs_votes
+    description: My transformation written in Pythony
+    config:
+      materialized: table
+      tags: ['python']

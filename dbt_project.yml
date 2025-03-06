@@ -37,5 +37,9 @@ clean-targets:         # directories to be removed by `dbt clean`
 
 models:
   solana_dbt_model:
+    vx-tools:
+      +materialized: table
     trillium-datas:
+      +materialized: table
+    validators-apy:
       +materialized: table

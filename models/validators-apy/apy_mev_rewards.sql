@@ -27,7 +27,7 @@ SELECT
   -- Limiter les calculs extrêmes avec un check ou un clip
   CASE
     WHEN mev_rewards_per_epoch > 0.1 THEN NULL  -- Optionnel : exclure les récompenses excessives
-    ELSE POWER(1 + mev_rewards_per_epoch, epochs_per_year) - 1
+    ELSE (mev_rewards_per_epoch * epochs_per_year)
   END AS mev_rewards_apy
 FROM
   MeVRewards

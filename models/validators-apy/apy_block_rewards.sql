@@ -27,7 +27,7 @@ SELECT
   -- Limiter les calculs extrêmes avec une logique conditionnelle
   CASE
     WHEN block_rewards_per_epoch > 0.1 THEN NULL  -- Optionnel : ignorer les valeurs trop élevées
-    ELSE POWER(1 + block_rewards_per_epoch, epochs_per_year) - 1
+    ELSE (block_rewards_per_epoch * epochs_per_year)
   END AS block_rewards_apy
 FROM
   block_rewards
